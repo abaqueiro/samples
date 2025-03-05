@@ -1,0 +1,9 @@
+FROM myregistry.local/sre-alpine.3.16
+RUN apk add libstdc++ libgcc icu-libs libintl \
+        && rm -rf /var/cache/apk/*
+COPY [ "download/aspnetcore-runtime-3.1.32-linux-musl-x64.tar.gz", "/tmp/" ]
+RUN mkdir -p /usr/share/dotnet \
+        && tar zxf /tmp/aspnetcore-runtime-*.tar.gz -C /usr/share/dotnet \
+        && ln -s /usr/share/dotnet /usr/bin/dotnet \
+        && rm /tmp/*
+
