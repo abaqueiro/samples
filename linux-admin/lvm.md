@@ -2,7 +2,8 @@
 
 ### List physical devices
 
-```pvdisplay
+```
+pvdisplay
 
   --- Physical volume ---
   PV Name               /dev/sda3
@@ -19,7 +20,8 @@
 
 ### List volume groups
 
-```vgdisplay
+```
+vgdisplay
 
   --- Volume group ---
   VG Name               ubuntu-vg
@@ -41,6 +43,47 @@
   Alloc PE / Size       27903 / <109.00 GiB
   Free  PE / Size       22784 / 89.00 GiB
   VG UUID               7UQlWm-2hX3-sdNK-sOwC-XGQo-R2gc-fpuIiK
+```
+
+### List logical volumes
+
+```
+lvdisplay
+
+  --- Logical volume ---
+  LV Path                /dev/ubuntu-vg/ubuntu-lv
+  LV Name                ubuntu-lv
+  VG Name                ubuntu-vg
+  LV UUID                dkZX3D-WdEx-2okU-uNa4-pnXI-JPkN-8iamto
+  LV Write Access        read/write
+  LV Creation host, time ubuntu-server, 2023-10-13 16:17:09 +0000
+  LV Status              available
+  # open                 1
+  LV Size                <49.00 GiB
+  Current LE             12543
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           253:0
+
+  --- Logical volume ---
+  LV Path                /dev/ubuntu-vg/container-images
+  LV Name                container-images
+  VG Name                ubuntu-vg
+  LV UUID                s4qbKr-h11X-RrBK-IJRv-MbZe-qRVy-02Tj73
+  LV Write Access        read/write
+  LV Creation host, time server02.local, 2024-03-26 16:08:06 +0000
+  LV Status              available
+  # open                 1
+  LV Size                60.00 GiB
+  Current LE             15360
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           253:1
+
 ```
 
 ### How to extend a L
