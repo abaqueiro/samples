@@ -86,5 +86,13 @@ lvdisplay
 
 ```
 
-### How to extend a L
+### How to extend a Logical volume
+
+```
+# extend the logical volume
+lvextend -L +20G -r /dev/ubuntu-vg/container-images
+
+# resize the filesystem in the volume (this case is an ext2 filesystem)
+resize2fs /dev/mapper/ubuntu--vg-container--images
+```
 
