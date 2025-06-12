@@ -86,6 +86,16 @@ lvdisplay
 
 ```
 
+### How to create a Logical volume
+
+```
+VG_NAME=rhel
+LV_NAME=container-images
+LV_SIZE=60G
+lvcreate -L $LV_SIZE -n $LV_NAME $VG_NAME
+
+```
+
 ### How to extend a Logical volume
 
 ```
