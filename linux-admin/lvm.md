@@ -104,5 +104,9 @@ lvextend -L +20G -r /dev/ubuntu-vg/container-images
 
 # resize the filesystem in the volume (this case is an ext2 filesystem)
 resize2fs /dev/mapper/ubuntu--vg-container--images
+
+# resize a xfs filesystem
+xfs_growfs /home
+
 ```
 
